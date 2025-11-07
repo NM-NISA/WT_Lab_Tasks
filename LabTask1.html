@@ -1,0 +1,297 @@
+<html>
+
+<head>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: lightgrey;
+        }
+
+        body {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        table {
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 80%;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .right-alignment {
+            text-align: right;
+            font-weight: bold;
+            width: 35%;
+        }
+
+        .left-alignment {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .center-alignment {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .note {
+            text-align: right;
+            font-weight: normal;
+            font-size: 15px;
+        }
+
+        #header1 {
+            font-size: small;
+        }
+
+        #header2 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p id="header1"><span style="color:red">*</span> -Denotes Required Information</p>
+        <p> <span id="header2">> 1 Donation</span> <span> > 2 Confirmation</span> <span> > 3 Thank You!</span></s></p>
+        <p style="color: red; font-size: 20px; font-weight: bold"> Donor Information </p>
+        <form1>
+            <table>
+                <tr>
+                    <td class="right-alignment">First Name <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter your first name" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Last Name <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter your last name" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Company <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter Company Name" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Address 1 <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter your 1st address" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Address 2</td>
+                    <td><input type="text" placeholder="Enter your 2nd address" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">City <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter your city Name" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">State <span style="color:red">*</span></td>
+                    <td>
+                        <select>
+                            <option disabled selected>Select a state </option>
+                            <option>Barishal</option>
+                            <option>Chattogram</option>
+                            <option>Dhaka</option>
+                            <option>Khulna</option>
+                            <option>Mymensingh</option>
+                            <option>Rajshahi</option>
+                            <option>Rangpur</option>
+                            <option>Sylhet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Zip Code <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter Zip Code" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Country <span style="color:red">*</span></td>
+                    <td>
+                        <select>
+                            <option disabled selected>Select a country </option>
+                            <option>Bangladesh</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Phone</td>
+                    <td><input type="" placeholder="Enter a phone number" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Fax</td>
+                    <td><input type="" placeholder="Enter a fax number" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Email <span style="color:red">*</span></td>
+                    <td><input type="text" placeholder="Enter a email" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Donation Amount<span style="color:red">*</span></td>
+                    <td>
+                        <input type="radio" name="amount" value="None" /> None
+                        <input type="radio" name="amount" value="$50" /> $50
+                        <input type="radio" name="amount" value="$75" /> $75
+                        <input type="radio" name="amount" value="$100" /> $100
+                        <input type="radio" name="amount" value="$250" /> $250
+                        <input type="radio" name="amount" value="Other" />Other
+                    </td>
+                </tr>
+                <tr>
+                    <td class="note">(Check a button or type in your amount)</td>
+                    <td style="font-weight: bold;">Other Amount $ <input type="number" placeholder="Enter an amount" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Recurring Donation</td>
+                    <td colspan="2">
+                        <input type="checkbox" />I am interested in giving on a regular basis.
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="note">(Check if yes) </td>
+                    <td colspan="2"> Monthly Credit Card $ <input type="number" style="width: 80px;"/> For <input type="number" style="width: 80px;"/> Months </td>
+                </tr>
+            </table>
+        </form1>
+        <p style="color: red; font-size: 20px; font-weight: bold"> Honorarium and Memorial Donation Information </p>
+        <form2>
+            <table>
+                <tr>
+                    <td class="right-alignment">I would like to make this</td>
+                    <td>
+                        <input type="radio" name="honorarium" value="To Honor" /> To Honor
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">donation</td>
+                    <td>
+                        <input type="radio" name="memorial" value="In memory of" /> In memory of
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Name</td>
+                    <td><input type="text" placeholder="Enter Your name" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Acknowledge Donation To</td>
+                    <td><input type="text" placeholder="" /></td>
+                </tr>   
+                <tr>
+                    <td class="right-alignment">Address</td>
+                    <td><input type="text" placeholder="Enter your address" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">City</td>
+                    <td><input type="text" placeholder="Enter your city" /></td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">State</td>
+                    <td>
+                        <select>
+                            <option disabled selected>Select a state </option>
+                            <option>Barishal</option>
+                            <option>Chattogram</option>
+                            <option>Dhaka</option>
+                            <option>Khulna</option>
+                            <option>Mymensingh</option>
+                            <option>Rajshahi</option>
+                            <option>Rangpur</option>
+                            <option>Sylhet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Zip Code</td>
+                    <td><input type="text" placeholder="Enter Zip Code" /></td>
+                </tr>
+            </table>
+        </form2>
+        <p style="color: red; font-size: 20px; font-weight: bold"> Additional Information </p>
+        <p> Please enter your name, company or organization as you would like it to appear in our publications: </p>
+        <form3>   
+            <table>
+                <tr>
+                    <td class="right-alignment"> Name </td>
+                    <td><input type="text" placeholder="Enter Your name" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" />I would like my gift to remain anonymous.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" />My employer offers a matching gift program. I will mail the matching gift form.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox"/>Please save the cost of acknowledging this gift by not mailing a thank you letter.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-alignment">Comments <span class="note"> (Please type any questions or feedback here) </span></td>
+                    <td>
+                        <textarea placeholder="" rows="5" cols="30" style="padding: 10px; width: 80%; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: normal; border: 1px solid 0 2px 10px rgba(0, 0, 0, 0.1);"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold; text-align: left;">How may we contact you?</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> E-mail
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> Postal mail
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> Telephone
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> Fax
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: gray"; colspan="2"> I would like to receive newsletters and information about special events by: </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> E-mail
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" /> Postal mail
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" /> I would like information about volunteering with this.
+                    </td>
+                </tr>
+            </table>
+            <hr style="border: 3px solid white; margin-top: 30px;">  
+        </form3>   
+        <button style="margin-top: 5px; margin-left: 350px; padding: 5px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);"> Reset </button>
+        <button style="margin-top: 5px; padding: 5px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);"> Continue </button>
+
+        <p><span style="color:red">*</span> Donate online with confidence. You are on a secure server. </p>
+        <p> If you have any problems or questions, please contact <span style="color: gray">support.</span> </p>
+    </div>
+    
+</body>
+
+</html>
