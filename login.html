@@ -1,95 +1,87 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title>Login</title>
     <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            border-color: black;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: rgb(241, 239, 239);
+        body{
+            font-family: Arial, Helvetica, sans-serif;
         }
-
-        body {
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-
-        table {
+        .main{
             width: 80%;
-            margin: 20px auto;
+            margin: auto;
+            border: 2px solid black;
         }
-
-        .center-text {
+        .header{
+            padding: 10px;
+            border-bottom: 2px solid black;
+        }
+        .header img{
+            width: 120px;
+        }
+        .nav{
+            float: right;
+        }
+        .nav a{
+            margin-left: 10px;
+        }
+        .content{
+            height: 300px;
             text-align: center;
         }
-
-        .right-alignment {
-            text-align: right;
-            width: 95%;
-        }
-
-        .left-alignment {
+        .login-box{
+            width: 400px;
+            border: 1px solid gray;
+            margin: 50px auto;
+            padding: 15px;
             text-align: left;
-            font-weight: bold;
         }
-
-        .center-alignment {
+        footer{
+            border-top: 2px solid black;
             text-align: center;
-            font-weight: bold;
-        }
-
-        .note {
-            text-align: right;
-            font-weight: normal;
-            font-size: 15px;
-        }
-
-        #header1 {
-            font-size: small;
-        }
-
-        #header2 {
-            font-weight: bold;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <p><span style="color:rgb(5, 148, 65); font-size: 30px; font-weight: bold;">X</span>company </p>
-        <p class="right-alignment"><span style="color: purple; font-family: 'Times New Roman', Times, serif;"> Home</span> | <span style="color: purple; font-family: 'Times New Roman', Times, serif;">Login</span> | <span style="color: purple; font-family: 'Times New Roman', Times, serif;">Registration </span></p>
-        
-        <form action="submit_form.php" method="POST">
-            <table>
-                <tr>
-                    <td class="center-alignment">User Name:</td>
-                    <td><input type="text" name="username" placeholder="" required /></td>
-                </tr>
-                <tr>
-                    <td class="center-alignment">Password :</td>
-                    <td><input type="password" name="password" placeholder="" required /></td>
-                </tr>
-            </table>
 
-            <hr style="border: 1px solid rgb(90, 89, 89); margin-top: 30px;">
+<div class="main">
 
-            <div class="center-alignment">
-                <input type="checkbox" name="remember_me" /> Remember me
-            </div>
-
-            <div class="center-alignment" style="margin-top: 15px;">
-                <button style="margin-top: 5px; margin-left: 1px; padding: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);"> Submit </button>
-            </div>
-        </form>
-
-        <p class="center-text" style="color: purple; font-family: 'Times New Roman', Times, serif;"> Forgot Password? </p>
-
-        <p class="center-text">Copyright &copy; 2017</p>
+    <div class="header">
+        <table width="100%">
+            <tr>
+                <td>
+                    <h2><span style="color: forestgreen; font-size: 40px; font-style: italic; font-weight: bolder;">X</span>company</h2>
+                </td>
+                <td align="right">
+                    <a href="#">Home</a> | <a href="#">Login</a> | <a href="#">Registration</a>
+                </td>
+            </tr>
+        </table>
     </div>
+
+    <div class="content">
+
+        <div class="login-box">
+            <b>LOGIN</b>
+            <br><br>
+            User Name : <input type="text"><br><br>
+            Password &nbsp;&nbsp;: <input type="password"><br><br>
+
+            <hr>
+
+            <input type="checkbox"> Remember Me <br><br>
+            <input type="submit" value="Submit"> 
+            <a href="#">Forgot Password?</a>
+        </div>
+
+    </div>
+
+    <footer>
+        Copyright © 2017
+    </footer>
+
+</div>
+
 </body>
-
 </html>
-
