@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <style>
+       body { font-family: Arial; background:#f5f5f5; padding:20px; }
+       .container { max-width:600px; margin:auto; background:#fff; padding:20px; border-radius:8px; }
+       h1 { text-align: center; color: red;}
+    </style>
+    <script>
+      let count = 0;
+      function handlenameValidation() {}
+      function handleCountTotalReview() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+
+        let valid = true;
+        if (name == "" || !name) {
+          document.getElementById("nameErr").innerHTML =
+            "Name cannot be empty";
+          valid = false;
+        } else if (name.length < 2) {
+          document.getElementById("nameErr").innerHTML =
+            "Name must be at least 2 characters long";
+          valid = false;
+        } else if (name.length > 30) {
+          document.getElementById("nameErr").innerHTML =
+            "Name cannot exceed 30 characters";
+          valid = false;
+        } else {
+          document.getElementById("nameErr").innerHTML = "";
+        }
+
+        if (email == "" || !email) {
+          document.getElementById("emailErr").innerHTML =
+            "Email cannot be empty";
+          valid = false;
+        } else {
+          const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailErr").innerHTML =
+              "Please enter a valid email address";
+            valid = false;
+          } else {
+            document.getElementById("emailErr").innerHTML = "";
+          }
+        }
+
+        if (title == "" || !title) {
+          document.getElementById("titleErr").innerHTML =
+            "Title cannot be empty";
+          valid = false;
+        } else if (title.length < 5) {
+          document.getElementById("titleErr").innerHTML =
+            "Title must be at least 5 characters long";
+          valid = false;
+        } else if (title.length > 100) {
+          document.getElementById("titleErr").innerHTML =
+            "Title cannot exceed 100 characters";
+          valid = false;
+        } else {
+          document.getElementById("titleErr").innerHTML = "";
+        }
+
+        if (description == "" || !description) {
+          document.getElementById("descripErr").innerHTML =
+            "Description cannot be empty";
+          valid = false;
+        } else if (description.length < 20) {
+          document.getElementById("descripErr").innerHTML =
+            "Description must be at least 20 characters long";
+          valid = false;
+        } else if (description.length > 1000) {
+          document.getElementById("descripErr").innerHTML =
+            "Description cannot exceed 1000 characters";
+          valid = false;
+        } else {
+          document.getElementById("descripErr").innerHTML = "";
+        }
+
+        const ratingChecked =
+          document.getElementById("1").checked ||
+          document.getElementById("2").checked ||
+          document.getElementById("3").checked ||
+          document.getElementById("4").checked ||
+          document.getElementById("5").checked;
+
+        if (!ratingChecked) {
+          document.getElementById("ratingErr").innerHTML =
+            "Please select a rating";
+          valid = false;
+        } else {
+          document.getElementById("ratingErr").innerHTML = "";
+        }
+
+        const recYes = document.getElementById("recYes").checked;
+        const recNo = document.getElementById("recNo").checked;
+
+        if (!recYes && !recNo) {
+          document.getElementById("recErr").innerHTML =
+            "Please select Yes or No";
+          valid = false;
+        } else {
+          document.getElementById("recErr").innerHTML = "";
+        }
+
+        if (valid) {
+          count++;
+        }
+      }
+
+      function showTotal() {
+        document.getElementById("totalReviews").innerHTML =
+          "Total Reviews: " + count;
+      }
+
+      function hideTotal() {
+        document.getElementById("totalReviews").innerHTML = "";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+    <h1>Product Review</h1>
+
+    <label>Name<span style="color:red">*</span></label>
+    <input type="text" id="name" placeholder="Enter Your name" />
+    <p id="nameErr" style="color:red"></p>
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter Your email" />
+    <p id="emailErr" style="color:red"></p>
+
+    <label>Review Title<span style="color:red">*</span></label>
+    <input type="text" id="title" placeholder="Enter a title">
+    <p id="titleErr" style="color:red"></p>
+
+    <label>Review Description<span style="color:red">*</span></label>
+    <textarea id="description" rows="4" cols="30"></textarea>
+    <p id="descripErr" style="color:red"></p>
+
+    <label>Rating<span style="color:red">*</span></label><br>
+    <input type="radio" id="1"> 1
+    <input type="radio" id="2"> 2
+    <input type="radio" id="3"> 3
+    <input type="radio" id="4"> 4
+    <input type="radio" id="5"> 5
+    <p id="ratingErr" style="color:red"></p>
+
+    <br>
+
+    <label>Would Recommend?<span style="color:red">*</span></label><br>
+    <input type="radio" id="recYes"> Yes
+    <input type="radio" id="recNo"> No
+    <p id="recErr" style="color:red"></p>
+
+    <br>
+
+    <button onclick="handleCountTotalReview()">Submit</button>
+    <button onclick="showTotal()">Show Total Count</button>
+    <button onclick="hideTotal()">Hide Total Count</button>
+
+    <p id="totalReviews"></p>
+    </div>
+  </body>
+</html>
