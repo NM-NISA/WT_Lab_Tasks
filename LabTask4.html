@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Display Section</title>
     <style>
-        /* Basic reset for styling */
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +13,6 @@
             background-color: #f4f4f4;
         }
 
-        /* Styling for the container holding all product boxes */
         .product-container {
             display: flex;
             flex-wrap: wrap;
@@ -26,28 +21,24 @@
             padding: 20px;
         }
 
-        /* Styling for product category titles */
         h2 {
             width: 100%;
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 30px;
+            margin-bottom: 10px;
             color: #013d7e;
         }
 
-        /* Individual product box styling */
         .product-box {
-            width: 30%; /* Adjust to make three boxes per row */
+            width: 30%;
             padding: 20px;
             border: 2px solid #ccc;
             background-color: #fff;
             text-align: center;
-            transition: all 0.3s ease-in-out;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Product image styling */
         .product-box img {
             width: 100%;
             max-width: 200px;
@@ -56,44 +47,51 @@
             border-radius: 4px;
         }
 
-        /* Product name styling */
         .product-box h3 {
-            font-size: 1.5rem;
+            font-size: 20px;
             margin-bottom: 10px;
             color: #333;
         }
 
-        /* Product description styling */
         .product-box p {
-            font-size: 1rem;
+            font-size: 15px;
             color: #555;
             margin-bottom: 15px;
         }
 
-        /* Price styling */
         .product-box .price {
-            font-size: 1.2rem;
+            font-size: 20px;
             color: #ff0202;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        /* Buy Now button styling */
         .product-box .buy-btn {
-            display: inline-block;
             padding: 10px 15px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 15px;
+        }
+
+        .product-box .review-btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
         }
 
         .product-box .buy-btn:hover {
             background-color: #0056b3;
         }
 
-        /* Hover effect (outline and outline offset) */
+        .product-box .review-btn:hover {
+            background-color: #0056b3;
+        }
+
         .product-box:hover {
             outline: 3px solid #007bff;
             outline-offset: 10px;
@@ -112,7 +110,8 @@
             <h3>DELL</h3>
             <p>"The Power to Do More"</p>
             <p class="price">$799.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -120,7 +119,8 @@
             <h3>HP</h3>
             <p>"Power. Premium."</p>
             <p class="price">$749.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -128,7 +128,8 @@
             <h3>LENOVO</h3>
             <p>"Smarter technology for all"</p>
             <p class="price">$899.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <!-- Row 2: Headphones -->
@@ -138,7 +139,8 @@
             <h3>HAVIT GAMING HEADPHONES</h3>
             <p>"Noise-cancelling headphones with superb sound quality and comfort."</p>
             <p class="price">$199.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -146,7 +148,8 @@
             <h3>KVIDIO BLUETOOTH HEADPHONES</h3>
             <p>"Sound Without Limits"</p>
             <p class="price">$149.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -154,7 +157,8 @@
             <h3>OVER EAR HEADPHONES</h3>
             <p>"Escape into sound"</p>
             <p class="price">$159.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <!-- Row 3: Smartwatches -->
@@ -164,7 +168,8 @@
             <h3>Valdus Smartwatch</h3>
             <p>"Fashion and function"</p>
             <p class="price">$169.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -172,7 +177,8 @@
             <h3>Touch TSW19</h3>
             <p>"Strong Like You. Smart Like TOUCH"</p>
             <p class="price">$159.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
 
         <div class="product-box">
@@ -180,7 +186,8 @@
             <h3>Apple Watch</h3>
             <p>"The ultimate sports and adventure watch"</p>
             <p class="price">$199.99</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+            <a class="buy-btn">Buy Now</a>
+            <a class="review-btn">Review</a>
         </div>
     </div>
 </body>
