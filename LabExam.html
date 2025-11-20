@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <title>Global Tech Connect</title>
+    <style>
+       body { font-family: Arial; background:#aac4e2; padding:20px; }
+       .container { max-width:600px; margin:auto; background:#fff; padding:20px; border-radius:8px; }
+       h1 { font-size: 30px; text-align: center; color: rgb(231, 13, 13);}
+       textarea { width:100%; padding:8px; margin-bottom:10px; font-size: 15px;}
+       * { font-family: 'Times New Roman', Times, serif;}
+    </style>
+    <script>
+      let countT = 0;
+      let countV = 0;
+      let countI = 0;
+      function handleCountTotal() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const company = document.getElementById("company").value;
+
+        let valid = true;
+        if (name == "" || !name) {
+          document.getElementById("nameErr").innerHTML =
+            "Name cannot be empty.";
+          valid = false;
+        } else if (name.length < 6) {
+          document.getElementById("nameErr").innerHTML =
+            "Name must be at least 6 characters long.";
+          valid = false;
+        } else if (name.length > 100) {
+          document.getElementById("nameErr").innerHTML =
+            "Name cannot exceed 100 characters.";
+          valid = false;
+        } else {
+          document.getElementById("nameErr").innerHTML = "";
+        }
+
+        if (email == "" || !email) {
+          document.getElementById("emailErr").innerHTML =
+            "Email cannot be empty.";
+          valid = false;
+        } else {
+          const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailErr").innerHTML =
+              "Please enter a valid professional email address.";
+            valid = false;
+          } else {
+            document.getElementById("emailErr").innerHTML = "";
+          }
+        }
+
+        if (company.length > 100) {
+          document.getElementById("companyErr").innerHTML =
+            "Company/Institute Field cannot exceed 100 characters.";
+          valid = false;
+        } else {
+          document.getElementById("companyErr").innerHTML = "";
+        }
+
+        const isVirtual = document.getElementById("virtual").checked;
+        const isInPerson = document.getElementById("in-person").checked;
+
+        if (!isVirtual && !isInPerson) {
+          document.getElementById("attErr").innerText = "Please select your attendance type.";
+          valid = false;
+        } else {
+          document.getElementById("attErr").innerText = "";
+        }
+
+        if (valid) {
+          countT++;
+          if(isVirtual){
+            countV++;
+          }
+          if(isInPerson){
+            countI++;
+          }
+        }
+      }
+
+      function clearAll() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("company").value = "";
+
+        const radios = document.getElementsByName("attend");
+        for (let i = 0; i < radios.length; i++) {
+          radios[i].checked = false;
+        }
+
+        document.getElementById("nameErr").innerHTML = "";
+        document.getElementById("emailErr").innerHTML = "";
+        document.getElementById("companyErr").innerHTML = "";
+        document.getElementById("attErr").innerHTML = "";
+      }
+
+
+      function showAnalytics() {
+        document.getElementById("totalAnalytics").innerHTML =
+          "Total Analytics: " + countT;
+        document.getElementById("totalVirtual").innerHTML =
+          "Number of people selected Virtual: " + countV;
+        document.getElementById("totalInPerson").innerHTML =
+          "Number of people selected In-person: " + countI;
+      }
+
+      function hideAnalytics() {
+        document.getElementById("totalAnalytics").innerHTML = "";
+        document.getElementById("totalVirtual").innerHTML = "";
+        document.getElementById("totalInPerson").innerHTML = "";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+    <h1>Event Registration Form</h1>
+    <hr style="border: 3px solid rgb(137, 184, 223); margin-bottom: 25px;">
+
+    <label>Full Name<span style="color:red">*</span></label>
+    <textarea id="name" placeholder="Enter Your name" rows="1"></textarea>
+    <p id="nameErr" style="color:red"></p>
+
+    <label>Professional Email Address<span style="color:red">*</span></label>
+    <textarea id="email" placeholder="Enter Your email" rows="1"></textarea>
+    <p id="emailErr" style="color:red"></p>
+
+    <label>Company/ Institute</label>
+    <textarea id="company" placeholder="Enter your company/ institute" rows="1"></textarea>
+    <p id="companyErr" style="color:red"></p>
+
+    <label>Attendance Type<span style="color:red">*</span></label><br>
+    <input type="radio" id="virtual" name="attend"/> Virtual
+    <input type="radio" id="in-person" name="attend"/> In-Person
+    <p id="attErr" style="color:red"></p>
+
+    <br>
+
+    <button style="margin-left: 230px; padding: 5px;" onclick="handleCountTotal()">Submit</button>
+    <button style="padding: 5px;"onclick="clearAll()">Clear</button><br>
+
+    <br>
+
+    <button style="margin-left: 150px; padding: 5px;" onclick="showAnalytics()">Show Event Analytics</button>
+    <button style="padding: 5px;" onclick="hideAnalytics()">Hide Event Analytics</button>
+
+    <p id="totalAnalytics"></p>
+    <p id="totalVirtual"></p>
+    <p id="totalInPerson"></p>
+    </div>
+  </body>
+</html>
